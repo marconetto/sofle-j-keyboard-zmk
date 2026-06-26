@@ -59,11 +59,11 @@ layers:
   - $$mdi:keyboard-space$$
   - layer1
   - {t: '&td_toggle3', h: layer3}
-  - '&control_w'
-  - $$mdi:keyboard-space$$
+  - {t: '$$mdi:keyboard-return$$', type: enter}
+  - {t: '$$mdi:backspace$$', type: backspace}
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - layer2
-  - $$mdi:apple-keyboard-shift$$
+  - '&control_w'
   - $$mdi:backspace-reverse-outline$$
   layer1:
   - {t: '`', s: '~'}
