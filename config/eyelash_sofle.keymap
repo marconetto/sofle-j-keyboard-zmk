@@ -74,9 +74,8 @@
         td_toggle1: td_toggle1 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            /* tapping-term-ms = <300>; */
-            tapping-term-ms = <170>; // <-- Tightened from 300ms
-            bindings = <&kp ENTER>, <&tog 1>;
+            tapping-term-ms = <300>;
+            bindings = <&kp CAPS>, <&tog 1>;
         };
 
         td_toggle3: td_toggle3 {
