@@ -52,17 +52,39 @@
         tap-ms = <100>;
     };
 
+    // DOUBLE TAP LOCK THE LAYER
     behaviors {
+        // Our existing hold-tap behavior
         tt_layer: tt_layer {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
             quick-tap-ms = <150>;
-            bindings = <&mo>, <&tog>; // Hold = Momentary layer, Tap = Toggle layer lock
+            bindings = <&mo>, <&td_toggle3>; // <-- Change the tap binding to our new Tap-Dance
+        };
+
+        // NEW: Tap-Dance that requires 2 taps to toggle Layer 3
+        td_toggle3: td_toggle3 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>; // Time window to finish the double-tap
+            bindings = <&none>, <&tog 3>; // 1 tap = do nothing, 2 taps = lock Layer 3
         };
     };
 
+    // SINGLE TAP to lock (issue: accident can lock the layer)
+    /* behaviors { */
+    /*     tt_layer: tt_layer { */
+    /*         compatible = "zmk,behavior-hold-tap"; */
+    /*         #binding-cells = <2>; */
+    /*         flavor = "tap-preferred"; */
+    /*         tapping-term-ms = <200>; */
+    /*         quick-tap-ms = <150>; */
+    /*         bindings = <&mo>, <&tog>; // Hold = Momentary layer, Tap = Toggle layer lock */
+    /*     }; */
+    /* }; */
+    /**/
     combos {
         compatible = "zmk,combos";
 
