@@ -14,11 +14,6 @@
 ///////////////////////////////////////////////////////
 // use case: in layer0 I want to press a button1 that if I just press it, it will go to layer3 and stay there. If I press button1 with another button it will use layer3 just for that button
 ///////////////////////////////////////////////////////
-&tt {
-    /delete-property/ toggle-mode;  // Clean slate
-    tapping-term-ms = <200>;         // Hold longer than 200ms to make it temporary
-    quick-tap-ms = <150>;
-};
 /* &lt { */
 /*     tapping-term-ms = <200>;     // How long you have to hold to count as a hold (200ms is standard) */
 /*     quick-tap-ms = <150>;        // Allows fast double-tapping */
@@ -58,6 +53,14 @@
     };
 
     behaviors {
+        tt_layer: tt_layer {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
+            bindings = <&mo>, <&tog>; // Hold = Momentary layer, Tap = Toggle layer lock
+        };
     };
 
     combos {
@@ -95,7 +98,7 @@
 &kp TAB     &kp Q      &kp W         &kp E         &kp R   &kp T        &kp DOWN_ARROW   &kp Y      &kp U      &kp I      &kp O            &kp P       &kp BSLH
 &kp CAPS    &kp A      &kp S         &kp D         &kp F   &kp G        &kp LEFT_ARROW   &kp H      &kp J      &kp K      &kp L            &kp SEMI    &kp APOS
 &kp LSHFT   &kp Z      &kp X         &kp C         &kp V   &kp B        &kp RIGHT_ARROW  &kp N      &kp M      &kp COMMA  &kp DOT          &kp FSLH    &kp ENTER
-&kp C_MUTE  &kp LCTRL  &kp LEFT_GUI  &kp LEFT_ALT  &mo 1   &tt 3        &kp ENTER        &kp SPACE  &kp ENTER  &mo 2      &kp RIGHT_SHIFT  &kp DELETE
+&kp C_MUTE  &kp LCTRL  &kp LEFT_GUI  &kp LEFT_ALT  &mo 1   &tt_layer 3 3        &kp ENTER        &kp SPACE  &kp ENTER  &mo 2      &kp RIGHT_SHIFT  &kp DELETE
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
