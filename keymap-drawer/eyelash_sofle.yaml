@@ -58,7 +58,7 @@ layers:
   - $$mdi:apple-keyboard-command$$
   - $$mdi:apple-keyboard-option$$
   - layer1
-  - {t: '3', h: layer3}
+  - '&tt 3'
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - $$mdi:keyboard-space$$
   - {t: '$$mdi:keyboard-return$$', type: enter}
@@ -253,7 +253,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '3', h: layer3, type: held}
+  - {t: layer3, h: toggle}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
