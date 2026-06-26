@@ -11,6 +11,20 @@
 #include <dt-bindings/zmk/pointing.h>
 #include <dt-bindings/zmk/rgb.h>
 
+///////////////////////////////////////////////////////
+// use case: in layer0 I want to press a button1 that if I just press it, it will go to layer3 and stay there. If I press button1 with another button it will use layer3 just for that button
+///////////////////////////////////////////////////////
+&lt {
+    tapping-term-ms = <200>;     // How long you have to hold to count as a hold (200ms is standard)
+    quick-tap-ms = <150>;        // Allows fast double-tapping
+    retro-tap;                   // If you release without pressing another key, always sends the tap
+    flavor = "tap-preferred";
+    toggle-mode = "zmk,toggle-layer"; // This enables the locking behavior!
+};
+// usage:
+// &lt 3 3: The first 3 tells ZMK which layer to switch to when held (Layer 3). The second 3 tells ZMK which layer to toggle/lock into when tapped (Layer 3).
+///////////////////////////////////////////////////////
+
 &mmv_input_listener { input-processors = <&zip_xy_scaler 2 1>; };
 
 &msc_input_listener { input-processors = <&zip_scroll_scaler 2 1>; };
@@ -76,7 +90,7 @@
 &kp TAB     &kp Q      &kp W         &kp E         &kp R   &kp T        &kp DOWN_ARROW   &kp Y      &kp U      &kp I      &kp O            &kp P       &kp BSLH
 &kp CAPS    &kp A      &kp S         &kp D         &kp F   &kp G        &kp LEFT_ARROW   &kp H      &kp J      &kp K      &kp L            &kp SEMI    &kp APOS
 &kp LSHFT   &kp Z      &kp X         &kp C         &kp V   &kp B        &kp RIGHT_ARROW  &kp N      &kp M      &kp COMMA  &kp DOT          &kp FSLH    &kp ENTER
-&kp C_MUTE  &kp LCTRL  &kp LEFT_GUI  &kp LEFT_ALT  &mo 1   &mo 3        &kp ENTER        &kp SPACE  &kp ENTER  &mo 2      &kp RIGHT_SHIFT  &kp DELETE
+&kp C_MUTE  &kp LCTRL  &kp LEFT_GUI  &kp LEFT_ALT  &mo 1   &lt 3 3        &kp ENTER        &kp SPACE  &kp ENTER  &mo 2      &kp RIGHT_SHIFT  &kp DELETE
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
@@ -115,7 +129,7 @@
 &trans  &trans  &trans     &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans     &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &kp KP_N1  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans     &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans     &trans  &trans  &lt 3 3   &trans  &trans  &trans  &trans  &trans  &trans
             >;
 
             display-name = "layer3";
