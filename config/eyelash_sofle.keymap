@@ -84,7 +84,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <300>;
-            bindings = <&kp LGUI(SPACE)>, <&tog 3>;
+            bindings = <&launch_space>, <&tog 3>;
         };
     };
 
@@ -144,6 +144,12 @@
                 <&kp LEFT_SHIFT &mkp MB3>;
 
             label = "SHIFT_MCLK";
+        };
+
+        launch_space: launch_space {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LGUI(SPACE)>;
         };
     };
 
