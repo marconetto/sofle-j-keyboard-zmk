@@ -42,7 +42,7 @@ layers:
   - {t: '''', s: '"'}
   - $$mdi:apple-keyboard-shift$$
   - Z
-  - X
+  - Z
   - C
   - V
   - B
