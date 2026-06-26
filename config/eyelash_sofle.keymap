@@ -149,7 +149,7 @@
         launch_space: launch_space {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LGUI(SPACE)>;
+            bindings = <&macro_tap &kp LGUI(SPACE)>; // Added &macro_tap to encapsulate the key chord
         };
     };
 
