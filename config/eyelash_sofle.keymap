@@ -149,7 +149,10 @@
         launch_space: launch_space {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_tap &kp LGUI(SPACE)>; // Added &macro_tap to encapsulate the key chord
+            bindings
+                = <&macro_press &kp LGUI>     // Hold Command
+                , <&macro_tap &kp SPACE>      // Tap Space
+                , <&macro_release &kp LGUI>;  // Release Command
         };
     };
 
