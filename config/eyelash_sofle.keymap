@@ -51,29 +51,26 @@
 
         tap-ms = <100>;
     };
-
     behaviors {
-        // Hold-tap for Layer 1 (Holds Layer 1, Taps your Layer 1 Tap-Dance)
+        // Changed back to <2> to satisfy the hold-tap engine requirements
         tt_layer1: tt_layer1 {
             compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <1>;
+            #binding-cells = <2>; // Must be 2
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
             quick-tap-ms = <150>;
             bindings = <&mo>, <&td_toggle1>;
         };
 
-        // Hold-tap for Layer 3 (Holds Layer 3, Taps your Layer 3 Tap-Dance)
         tt_layer3: tt_layer3 {
             compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <1>;
+            #binding-cells = <2>; // Must be 2
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
             quick-tap-ms = <150>;
             bindings = <&mo>, <&td_toggle3>;
         };
 
-        // Tap-Dance for Layer 1
         td_toggle1: td_toggle1 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
@@ -81,7 +78,6 @@
             bindings = <&kp ENTER>, <&tog 1>;
         };
 
-        // Tap-Dance for Layer 3
         td_toggle3: td_toggle3 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
