@@ -59,7 +59,7 @@ layers:
   - $$mdi:keyboard-space$$
   - layer1
   - {t: '&td_toggle3', h: layer3}
-  - LCTRL(W)
+  - '&control_w'
   - $$mdi:keyboard-space$$
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - layer2
