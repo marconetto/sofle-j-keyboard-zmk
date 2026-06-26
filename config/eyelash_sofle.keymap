@@ -63,12 +63,12 @@
             bindings = <&mo>, <&bindings>; // <-- Uses the second parameter dynamically
         };
 
-        // Tap-Dance for Layer 2
+        // Tap-Dance for Layer 1
         td_toggle1: td_toggle1 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <300>;
-            bindings = <&kp ENTER>, <&tog 2>; // 1 tap = Enter, 2 taps = lock Layer 2
+            bindings = <&kp ENTER>, <&tog 1>; // 1 tap = Enter, 2 taps = lock Layer 2
         };
 
         // Tap-Dance for Layer 3
