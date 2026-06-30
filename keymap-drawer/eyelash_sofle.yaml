@@ -145,7 +145,7 @@ layers:
   - (
   - )
   - {t: '$$mdi:transfer$$', type: trans}
-  - '&LC(LG(Q))'
+  - Ctl+Gui+Q
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
