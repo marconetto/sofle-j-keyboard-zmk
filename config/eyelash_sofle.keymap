@@ -4,6 +4,7 @@
 
 
 #define LOCK_SCREEN &kp LC(LG(Q))
+#define CHANGE_COLOR &kp LC(LG(LA(N0)))
 
 #include <input/processors.dtsi>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
@@ -204,11 +205,11 @@
 
        layer_2 {
             bindings = <
-&trans  &kp F1       &kp F2  &kp F3  &kp F4  &kp F5    &trans  &kp F6     &kp F7     &kp F8  &kp F9  &kp LPAR          &kp RPAR
-&trans  LOCK_SCREEN  &trans  &trans  &trans  &trans    &trans  &kp PLUS   &kp MINUS  &trans  &kp F10  &kp LEFT_BRACKET  &kp RIGHT_BRACKET
-&trans  &trans       &trans  &trans  &trans  &trans    &trans  &kp EQUAL  &kp UNDER  &trans  &kp F11  &kp LEFT_BRACE    &kp RIGHT_BRACE
-&trans  &trans       &trans  &trans  &trans  &trans    &trans  &trans     &trans     &trans  &kp F12  &trans  &trans
-&trans  &trans       &trans  &trans  &trans  &trans    &trans  &trans     &trans     &trans  &trans  &trans
+&trans  &kp F1       &kp F2        &kp F3  &kp F4  &kp F5    &trans  &kp F6     &kp F7     &kp F8  &kp F9   &kp LPAR          &kp RPAR
+&trans  LOCK_SCREEN  CHANGE_COLOR  &trans  &trans  &trans    &trans  &kp PLUS   &kp MINUS  &trans  &kp F10  &kp LEFT_BRACKET  &kp RIGHT_BRACKET
+&trans  &trans       &trans        &trans  &trans  &trans    &trans  &kp EQUAL  &kp UNDER  &trans  &kp F11  &kp LEFT_BRACE    &kp RIGHT_BRACE
+&trans  &trans       &trans        &trans  &trans  &trans    &trans  &trans     &trans     &trans  &kp F12  &trans            &trans
+&trans  &trans       &trans        &trans  &trans  &trans    &trans  &trans     &trans     &trans  &trans   &trans
             >;
 
             display-name = "layer2";
