@@ -173,6 +173,16 @@
                 , <&macro_tap &kp W>          // Tap W
                 , <&macro_release &kp LCTRL>;  // Release Control
         };
+
+        vim_quit: vim_quit {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&kp ESC>
+                , <&kp LS(Z)>
+                , <&kp LS(Z)>
+                ;
+        };
     };
 
     keymap {
@@ -211,7 +221,7 @@
 &trans  LOCK_SCREEN  CHANGE_COLOR  &trans  &trans  TOGGLE_WINDOW   &trans  &kp PLUS   &kp MINUS  &trans  &kp F10  &kp LEFT_BRACKET  &kp RIGHT_BRACKET
 &trans  &trans       &trans        &trans  &trans  &trans          &trans  &kp EQUAL  &kp UNDER  &trans  &kp F11  &kp LEFT_BRACE    &kp RIGHT_BRACE
 &trans  &trans       &trans        &trans  &trans  SCREEN_SHOT     &trans  &trans     &trans     &trans  &kp F12  &trans            &trans
-&trans  &trans       &trans        &trans  &trans  &trans          &trans  &trans     &trans     &trans  &trans   &trans
+&trans  &vim_quit    &trans        &trans  &trans  &trans          &trans  &trans     &trans     &trans  &trans   &trans
             >;
 
             display-name = "layer2";
