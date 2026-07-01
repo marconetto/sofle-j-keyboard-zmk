@@ -97,7 +97,7 @@ layers:
   - KP 4
   - KP 5
   - KP 6
-  - {t: '$$mdi:transfer$$', type: trans}
+  - KP DOT
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - $$mdi:arrow-left-bold$$
@@ -110,7 +110,7 @@ layers:
   - KP 1
   - KP 2
   - KP 3
-  - {t: '$$mdi:transfer$$', type: trans}
+  - KP 0
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
