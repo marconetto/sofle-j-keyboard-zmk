@@ -57,7 +57,7 @@ layers:
   - $$mdi:apple-keyboard-option$$
   - $$mdi:apple-keyboard-command$$
   - $$mdi:keyboard-space$$
-  - layer2
+  - {t: '&launch_space', h: layer2}
   - {t: '&td_toggle3', h: layer3}
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - {t: '$$mdi:backspace$$', type: backspace}
