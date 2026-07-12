@@ -82,6 +82,24 @@
             bindings = <&none>, <&to 1>;
         };
 
+        // Changed back to <2> to satisfy the hold-tap engine requirements
+        tt_layer1left: tt_layer1left {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>; // Must be 2
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
+            bindings = <&mo>, <&td_toggle1>;
+        };
+
+        td_toggle1left: td_toggle1left {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <&launch_space>, <&to 1>;
+        };
+
+
         tt_layer3: tt_layer3 {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>; // Must be 2
@@ -203,11 +221,11 @@
 
         layer0 {
             bindings = <
-&kp GRAVE   &kp N1     &kp N2        &kp N3        &kp N4  &kp N5       &kp UP_ARROW     &kp N6     &kp N7     &kp N8     &kp N9           &kp N0       &kp BACKSPACE
-&kp TAB     &kp Q      &kp W         &kp E         &kp R   &kp T        &kp DOWN_ARROW   &kp Y      &kp U      &kp I      &kp O            &kp P        &kp BSLH
-&kp LSHFT   &kp A      &kp S         &kp D         &kp F   &kp G        &kp LEFT_ARROW   &kp H      &kp J      &kp K      &kp L            &kp SEMI     &kp SINGLE_QUOTE
-&mo 3       &kp Z      &kp X         &kp C         &kp V   &kp B        &kp RIGHT_ARROW  &kp N      &kp M      &kp COMMA  &kp DOT          &kp FSLH     &kp RIGHT_SHIFT
-&kp C_MUTE  &kp LEFT_ALT  &kp LEFT_GUI  &kp SPACE  &kp LCTRL   &lt_nav 2 0   &kp ENTER  &kp BACKSPACE    &kp ENTER  &tt_layer1 1 0      CONTROL_C       &control_w
+&kp GRAVE   &kp N1        &kp N2        &kp N3        &kp N4               &kp N5           &kp UP_ARROW     &kp N6     &kp N7           &kp N8     &kp N9           &kp N0       &kp BACKSPACE
+&kp TAB     &kp Q         &kp W         &kp E         &kp R                &kp T            &kp DOWN_ARROW   &kp Y      &kp U            &kp I      &kp O            &kp P        &kp BSLH
+&kp LSHFT   &kp A         &kp S         &kp D         &kp F                &kp G            &kp LEFT_ARROW   &kp H      &kp J            &kp K      &kp L            &kp SEMI     &kp SINGLE_QUOTE
+&kp LCTRL   &kp Z         &kp X         &kp C         &kp V                &kp B            &kp RIGHT_ARROW  &kp N      &kp M            &kp COMMA  &kp DOT          &kp FSLH     &kp RIGHT_SHIFT
+&kp C_MUTE  &kp LEFT_ALT  &kp LEFT_GUI  &kp SPACE     &tt_layer1 1 0       &lt_nav 2 0      &kp ENTER        &kp BACKSPACE    &kp ENTER  &tt_layer1 1 0   CONTROL_C    &control_w
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
